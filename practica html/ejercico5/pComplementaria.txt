@@ -1,0 +1,54 @@
+Ejercitación 1: Cuestionario Teórico sobre HTML5
+¿Ventajas de HTML5?
+Incorporación de etiquetas semánticas claras (<header>, <footer>, <article>, <section>), lo que hace el código más ordenado y fácil de leer.
+Inclusión nativa de etiquetas multimedia (<audio> y <video>) sin necesidad de plugins externos como Adobe Flash.
+APIs nativas potentes para geolocalización, almacenamiento local (localStorage) superior a las cookies y gráficos interactivos mediante <canvas>.
+Excelente compatibilidad y diseño adaptativo (responsive) para dispositivos móviles.
+¿Por qué utilizarlo?
+Porque es el estándar actual adoptado por todos los navegadores modernos (Chrome, Firefox, Safari, Edge). Permite crear aplicaciones web modernas, rápidas y accesibles que funcionan tanto en computadoras como en tablets y smartphones desde una misma URL.
+Principales ventajas resumidas:
+Es gratuito y no requiere programas especiales.
+Código más limpio y semántico.
+Almacenamiento local seguro del lado del cliente.
+Soporte multimedia nativo.
+Ejercitación 2: Etiquetas de Audio
+2.A) ¿Qué formatos soporta? 
+HTML5 soporta principalmente tres formatos de audio: MP3 (audio/mpeg), WAV (audio/wav) y OGG (audio/ogg).
+2.B) Crear un elemento audio (con el ejemplo de la guía):
+HTML
+<audio controls>
+    <source src="https://html5tutorial.info/media/vincent.mp3" type="audio/mpeg">
+    Tu navegador no soporta la reproducción de audio.
+</audio>
+Ejercitación 3: Etiquetas de Video
+3.A) ¿Qué formatos soporta? Los formatos principales soportados por los navegadores son MP4 (video/mp4), WebM (video/webm) y OGG (video/ogg).
+3.B) Crear un elemento video (con el ejemplo de la guía):
+HTML
+<video width="320" height="240" controls>
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    Tu navegador no soporta la reproducción de video.
+</video>
+Ejercitación 4: Aplicación en Formularios HTML5
+HTML5 introdujo validaciones nativas espectaculares que evitan tener que escribir código extra en JavaScript para cosas básicas. Aquí tienes los ejemplos exactos para cada punto:
+4.A) Campo requerido (required):
+HTML
+<input type="text" name="nombre" required placeholder="Este campo es obligatorio">
+
+4.B) Campo de tipo email con validación automática:
+HTML
+<input type="email" name="correo" required placeholder="ejemplo@correo.com">
+4.C) Campo de tipo fecha (date):
+HTML
+<input type="date" name="fechaNacimiento" required>
+
+4.D) Campo de tipo color (color):
+HTML
+<input type="color" name="colorFavorito" value="#ff0000">
+
+4.E) Campo de tipo número (number) con mínimos y máximos:
+HTML
+<label>Cantidad de pasajeros (1 al 10):</label>
+<input type="number" name="cantidad" min="1" max="10" value="1" required>
+
+
+
