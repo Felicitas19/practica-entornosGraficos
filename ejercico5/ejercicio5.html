@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Ejercitación 5 - Marcos</title>
+</head>
+<!-- Reemplazamos <body> por <frameset> -->
+<frameset rows="20%, 65%, 15%">
+    
+    <!-- Fila 1: Encabezado (más ancho) y Logo (más angosto) -->
+    <frameset cols="75%, 25%">
+        <frame src="encabezado.htm" name="encabezado">
+        <frame src="logo.htm" name="logo">
+    </frameset>
+    
+    <!-- Fila 2: Menú (más angosto) y Principal (más ancho) -->
+    <frameset cols="25%, 75%">
+        <frame src="menu.htm" name="menu">
+        <frame src="principal.htm" name="principal">
+    </frameset>
+    
+    <!-- Fila 3: Pie de página (ocupa todo el ancho) -->
+    <frame src="pie.htm" name="pie">
+
+</frameset>
+</html>
