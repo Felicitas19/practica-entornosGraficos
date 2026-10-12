@@ -1,0 +1,93 @@
+Ejercitación 1: Cuestionario Teórico
+1. ¿Qué es CSS y para qué se usa?
+CSS (Cascading Style Sheets u Hojas de Estilo en Cascada) es un lenguaje de diseño gráfico que sirve para definir y estructurar la presentación visual de un documento escrito en HTML o XML.
+Permite separar el contenido de la estructura visual. Gracias a CSS, se puede controlar de forma centralizada el diseño, los colores, las fuentes, los márgenes y la adaptabilidad a distintos dispositivos (responsive design) de todo un sitio web.
+2. CSS utiliza reglas para las declaraciones de estilo, ¿cómo funcionan?
+Una regla CSS se compone de dos partes fundamentales:
+Selector: Indica a qué elemento o elementos de HTML se le va a aplicar el estilo (por ejemplo, h1, .clase, #id).
+Bloque de declaraciones: Va entre llaves {} y contiene una o más propiedades seguidas de dos puntos y su valor correspondiente, terminando cada una con punto y coma (ej. color: red; font-size: 16px;).
+3. ¿Cuáles son las tres formas de dar estilo a un documento?
+Nivel de elemento (Inline / En línea): Se aplica directamente dentro de la etiqueta HTML usando el atributo style="...". Es la forma más fácil pero menos recomendada para proyectos grandes.
+Nivel de página (Interno): Se define dentro de la sección <head> de la página HTML utilizando la etiqueta <style>.
+Nivel de archivo externo (Hoja externa): Se escribe en un archivo independiente con extensión .css y se vincula a la página HTML mediante la etiqueta <link rel="stylesheet" href="estilos.css">. Es la metodología más recomendada y profesional.
+4. ¿Cuáles son los distintos tipos de selectores más utilizados? Ejemplifique cada uno.
+Selector de etiqueta (o de elemento): Afecta a todas las etiquetas HTML de ese tipo. Ejemplo: p { color: blue; } (pinta todos los párrafos de azul).
+Selector de clase (.): Afecta a cualquier elemento que tenga asignado ese atributo class. Ejemplo: .resaltado { font-weight: bold; }.
+Selector de ID (#): Afecta a un único elemento específico que posea ese identificador único (el ID debe ser único por página). Ejemplo: *#cabecera { background: #ccc; }.
+Selector universal (*): Afecta absolutamente a todos los elementos de la página. Ejemplo: * { margin: 0; }.
+5. ¿Qué es una pseudo-clase? ¿Cuáles son las más utilizadas aplicadas a vínculos?
+ Una pseudo-clase es una palabra clave que se añade a un selector para definir un estado especial del elemento (por ejemplo, cuando el usuario pasa el mouse por encima o cuando un enlace ya fue visitado).
+Las más utilizadas en vínculos (<a>):
+a:link: Define el estilo de un enlace no visitado.
+a:visited: Define el estilo de un enlace que ya ha sido visitado.
+a:hover: Define el estilo cuando el usuario pasa el cursor por encima del enlace.
+a:active: Define el estilo en el preciso instante en que el usuario hace clic.
+6. ¿Qué es la herencia?
+La herencia es el mecanismo por el cual ciertas propiedades CSS aplicadas a un elemento padre (por ejemplo, la tipografía o el color del texto en el <body>) se transmiten automáticamente a sus elementos hijos anidados (como párrafos o listas que están dentro de ese <body>), a menos que se les defina un estilo propio que sobrescriba al padre.
+7. ¿En qué consiste el proceso denominado cascada?
+La "cascada" es el algoritmo que utiliza el navegador para resolver conflictos cuando múltiples reglas CSS intentan aplicarse a un mismo elemento. El navegador determina qué regla prevalece evaluando la importancia (!important), la especificidad del selector (los IDs pesan más que las clases, y las clases más que las etiquetas) y el orden de aparición (las reglas declaradas más abajo en el código tienen mayor prioridad).
+Ejercitación 2
+Análisis del código: El bloque define estilos específicos para elementos identificados mediante IDs (#normal, #destacado, #distinto).
+Efecto visual:
+El párrafo con id="normal" toma tipografía Arial de 11px en negrita.
+El párrafo y la tabla con id="destacado" se dibujan con un borde sólido azul de 2px de grosor.
+El párrafo con id="distinto" muestra un color de fondo celeste (#9EC7EB) y texto rojo.
+Ejercitación 3
+Análisis del código: Combina selectores de etiqueta con clases (p.quitar, *.desarrollo, .importante) y muestra la aplicación de múltiples clases en una misma etiqueta (class="quitar importante").
+Efecto visual:
+Los párrafos y elementos con .quitar se ponen en color rojo.
+Los elementos con .desarrollo reducen su tamaño de fuente a 8px.
+Aquel elemento que combina ambas clases (class="quitar importante") heredará las propiedades de ambas, resolviendo los conflictos según las reglas de cascada y especificidad.
+Ejercitación 4
+Análisis de declaraciones y comparativa:
+La regla universal * { color: green; } establece el verde como color base para todo el documento.
+Las pseudo-clases colorean los hipervínculos (a:link gris, a:visited azul, a:hover fucsia, a:active rojo).
+La etiqueta <p> define tipografía Arial de 10px en color negro, la cual sobrescribe al selector universal por tener mayor especificidad.
+La clase .contenido agranda la fuente a 14px y la pone en negrita. Al aplicarla mediante <body class="contenido">, se propaga a los textos hijos que no tengan una definición más específica.
+Ejercitación 5: Declaración de Reglas CSS Solicitadas
+Textos enfatizados dentro de cualquier título rojos:
+CSS
+h1 em, h2 em, h3 em, h4 em, h5 em, h6 em { color: red; }
+
+
+Cualquier elemento con atributo href dentro de un párrafo a su vez dentro de un bloque en negro:
+CSS
+div p [href] { color: black; }
+
+Listas no ordenadas dentro del bloque "ultimo" en amarillo, pero si son enlaces en azul:
+CSS
+#ultimo ul { color: yellow; }
+#ultimo ul a { color: blue; }
+
+Elementos "importante" dentro de un bloque en verde, pero si están en un título en rojo:
+CSS
+div .importante { color: green; }
+h1 .importante, h2 .importante, h3 .importante { color: red; }
+
+Todos los elementos h1 que especifiquen el atributo title en azul:
+CSS
+h1[title] { color: blue; }
+
+
+Enlaces en listas ordenadas (no visitados azul, visitados violeta, sin subrayado):
+CSS
+ol a:link { color: blue; text-decoration: none; }
+ol a:visited { color: violet; text-decoration: none; }
+
+Ejercitación 6: Migración de Estilos Internos a Externos
+Para cumplir con la consigna de vincular el archivo externo estilo2.css provisto por la cátedra sin modificarlo, debemos actualizar la cabecera <head> del archivo principal.html:
+HTML
+<HEAD>
+    <TITLE>Página Principal</TITLE>
+    <META http-equiv=Content-Type content="text/html; charset=iso-8859-1"></META>
+    
+    <!-- Enlace a la hoja de estilo externa exigida -->
+    <link rel="stylesheet" type="text/css" href="estilo2.css">
+</HEAD>
+
+HTML
+<UL class="vineta">
+    <LI><A href="http://www.e-style.com.ar/moodle" target=_blank>Curso Actual</A></LI>
+    <LI><A href="http://www.e-style.com.ar/logica" target=_blank>Curso anterior</A></LI>
+    <LI><A href="http://www.e-style.com.ar/ntedu/consultas.htm" target=_blank>Contacto</A></LI>
+</UL>
