@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Recomendar el sitio</title>
+</head>
+<body>
+    <h2>Recomienda nuestro sitio a un amigo</h2>
+    <form action="enviar_recomendacion.php" method="post">
+        <fieldset>
+            <p><label>Tu Nombre: <input type="text" name="remitente_nombre" required /></label></p>
+            <p><label>Tu Email: <input type="text" name="remitente_email" required /></label></p>
+            <p><label>Email del Amigo: <input type="text" name="amigo_email" required /></label></p>
+            <input type="submit" value="Recomendar"/>
+        </fieldset>
+    </form>
+</body>
+</html>

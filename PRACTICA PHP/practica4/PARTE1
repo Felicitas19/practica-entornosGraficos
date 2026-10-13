@@ -1,0 +1,39 @@
+Ejercicio 1
+Variables y sus tipos:
+$a = TRUE;  Tipo boolean.
+$b = "xyz";  Tipo string.
+$c = 'xyz';  Tipo string.
+$d = 12;  Tipo integer.
+Operadores:
+Aritméticos y de asignación (*, +, +=, =).
+Incremento (++).
+Ternario (? :).
+Funciones de verificación de tipos (is_int, is_string).
+Funciones y parámetros:
+doble($i): recibe un parámetro numérico ($i) y devuelve el valor multiplicado por 2.
+gettype($var): recibe una variable y devuelve su tipo como cadena.
+echo: sentencia del lenguaje para mostrar salidas.
+Estructuras de control:
+Condicionales if.
+Salida por pantalla:
+gettype imprime los tipos de las variables: booleanstringstringinteger.
+Tras las evaluaciones y operaciones lógicas, se imprimen los valores finales de las variables mediante echo $a, $b, $c, $d, $f, $g;.
+Ejercicio 2
+a) Bucles while y do-while: Las estructuras presentadas muestran diferentes sintaxis de iteración (while tradicional, sintaxis alternativa con dos puntos :endwhile, y bucles do-while) para recorrer e incrementar valores numéricos.
+b) Bucles for: Se evalúan formas equivalentes de expresar la inicialización, condición e incremento dentro de un bucle for en PHP, incluyendo expresiones vacías y saltos con break.
+c) Estructuras condicionales múltiples: Se compara una estructura de múltiples elseif encadenados con una sentencia switch equivalente para evaluar la variable $i. Ambas son equivalentes en lógica de control.
+Ejercicio 3
+a) Genera dinámicamente una tabla HTML de 5 filas ($row = 5) y 2 columnas ($col = 2) con un ancho del $90\%$ y borde visible de valor 1, rellenando cada celda con un espacio en blanco (&nbsp;).
+b) Gestiona un formulario web:
+Comprueba mediante !isset($_POST['submit']) si el formulario aún no ha sido enviado. Si no se envió, muestra un formulario HTML solicitando la edad con un campo de texto y un botón de envío (POST) que apunta al mismo script ($_SERVER['PHP_SELF']).
+Si el formulario ya fue enviado, recupera el valor de la edad ($_POST['age']) y evalúa mediante un condicional si es mayor o igual a 21 (>= 21), imprimiendo "Mayor de edad" o "Menor de edad" según corresponda.
+Ejercicio 4
+Análisis del código:
+PHP
+echo "El $flor $color \n";
+include 'datos.php';
+echo " El $flor $color";
+
+Salida producida y justificación: En el primer echo, las variables $flor y $color no están definidas en ese ámbito, por lo que se imprimen vacías (o generan un aviso Notice según la configuración de PHP) mostrando únicamente "El ". Luego, la instrucción include 'datos.php' incorpora e interpreta el archivo que define $color = 'blanco' y $flor = 'clavel'. Finalmente, el segundo echo imprime correctamente: "El clavel blanco".
+Ejercicio 5
+Contador de visitas: El script lee el valor actual de las visitas almacenado en el archivo de texto plano contador.dat utilizando fopen (modo lectura r) y fread. Luego, cierra el archivo (fclose), lo vuelve a abrir en modo escritura (w), incrementa el contador en 1 unidad ($cont = $cont + 1), lo guarda con fwrite, cierra nuevamente el archivo y muestra la cantidad total de visitas formateada en HTML. El archivo visitas.php incluye este código mediante include("contador.php").
