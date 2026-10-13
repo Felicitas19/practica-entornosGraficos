@@ -1,0 +1,34 @@
+Ejercicio 1: Completar y Explicar
+A continuación se completan los espacios solicitados en la guía teórica y práctica:
+Consulta a una base de datos: Para comenzar la comunicación con un servidor de base de datos MySQL, es necesario abrir
+ una conexión a ese servidor. Para inicializar esta conexión, PHP ofrece la función  mysqli_connect().
+Todos sus parámetros son opcionales, pero hay tres de ellos que generalmente son necesarios:  $hostname (servidor), 
+$nombreUsuario (usuario de la base de datos) y $contraseña.
+Una vez abierta la conexión, se debe seleccionar la base de datos a utilizar mediante la función mysqli_select_db().
+Esta función recibe como parámetros la variable de conexión $nombreConexión (o $link) y el nombre de la base de datos
+ $nombreBaseDatos.
+La función mysqli_query() se utiliza para ejecutar una instrucción en lenguaje SQL sobre la base de datos seleccionada.
+ Requiere como parámetros el identificador de conexión $nombreConexión y la cadena con la consulta $query.
+La cláusula or die() interrumpe la ejecución del script si la función falla, y la función mysqli_error() permite obtener 
+una cadena con la descripción textual del último error devuelto por el servidor MySQL.
+Explicación del bloque de código:
+<?php 
+while (fila=mysqlifetcharray(vResultado)) { ?> 
+  <tr> 
+    <td><?php echo (fila);?></td><td><?phpecho(fila[9]); ?></td> 
+    <td><?php echo ($fila[10]); ?></td> 
+  </tr> 
+  <tr> 
+    <td colspan="5"> 
+<?php } 
+mysqli_free_result($vResultado); 
+mysqli_close($link); 
+?>
+
+Bucle while y mysqli_fetch_array(): La función mysqli_fetch_array() toma la variable resultado $vResultado enviada por
+ mysqli_query() y extrae una fila a la vez en forma de vector o array. El bucle while se repite mientras sigan existiendo
+  registros en el conjunto de resultados.
+Acceso por índices numéricos: $fila, $fila y $fila acceden consecutivamente a la primera, segunda y tercera columna de cada
+ registro recuperado, imprimiendo sus valores dentro de celdas HTML <td>.
+Liberación y Cierre: Al finalizar el recorrido de las filas, mysqli_free_result($vResultado) libera la memoria reservada para 
+los resultados y mysqli_close($link) cierra formalmente la conexión abierta con el servidor MySQL.

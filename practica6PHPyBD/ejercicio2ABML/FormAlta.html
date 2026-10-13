@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><title>Alta de Ciudad</title></head>
+<body>
+  <form action="Alta.php" method="POST">
+    <table>
+      <tr><td>Ciudad:</td><td><input type="text" name="ciudad" required></td></tr>
+      <tr><td>País:</td><td><input type="text" name="pais" required></td></tr>
+      <tr><td>Habitantes:</td><td><input type="number" name="habitantes" required></td></tr>
+      <tr><td>Superficie (km²):</td><td><input type="number" step="0.01" name="superficie" required></td></tr>
+      <tr>
+        <td>¿Tiene Metro?:</td>
+        <td>
+          <select name="tieneMetro">
+            <option value="1">Sí</option>
+            <option value="0">No</option>
+          </select>
+        </td>
+      </tr>
+      <tr><td colspan="2"><input type="submit" value="Agregar Ciudad"></td></tr>
+    </table>
+  </form>
+  <p><a href="Menu.html">Volver al Menú</a></p>
+</body>
+</html>
